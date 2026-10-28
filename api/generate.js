@@ -1,12 +1,16 @@
 // Server-only Vercel function. Requires OPENAI_API_KEY in Vercel project settings.
 const ALLOWED = new Set(['image/jpeg','image/png','image/webp']);
-const MAX = 10*1024*1024;
+const MAX = 1.8*1024*1024;
+const MAX_TOTAL_ENCODED = 3.7*1024*1024;
 export default async function handler(req,res){
   res.setHeader('Cache-Control','no-store');
   if(req.method!=='POST'){res.setHeader('Allow','POST');return res.status(405).json({error:'Method not allowed'});}
-  if(!process.env.OPENAI_API_KEY)return res.status(503).json({error:'Image generation is not configured yet. Please try again later.'});
+  if(!process.env.OPENAI_API_KEY || !process.env.DEMO_ACCESS_CODE)return res.status(503).json({error:'The private demo is not configured yet.'});
+  if(Number(req.headers['content-length']||0)>MAX_TOTAL_ENCODED)return res.status(413).json({error:'Images are too large. Please choose smaller photos.'});
+  if(req.headers.origin){try{if(new URL(req.headers.origin).host!==req.headers.host)return res.status(403).json({error:'Request origin not allowed.'});}catch{return res.status(403).json({error:'Invalid origin.'});}}
   try{
-    const {photos,style,consent}=req.body||{};
+    const {photos,style,consent,accessCode}=req.body||{};
+    if(typeof accessCode!=='string'||accessCode!==process.env.DEMO_ACCESS_CODE)return res.status(403).json({error:'Incorrect demo access code.'});
     if(consent!==true||!Array.isArray(photos)||photos.length<1||photos.length>2)return res.status(400).json({error:'Consent and one or two photos are required.'});
     let bytes=0;
     const content=[{type:'input_text',text:'Create one imaginative, adorable portrait of a fictional baby around 10 months old, in premium realistic-inspired 3D animated-film illustration style. Use the consenting adults pictured only as visual inspiration for features; this is NOT a genetic prediction. Centered baby, friendly smile, tasteful soft studio background, fully clothed, no text, no adult faces in the output. Style preference: '+String(style||'Realistic').slice(0,30)+'.'}];
