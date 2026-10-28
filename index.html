@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Give Me Your Genes</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#100b23;color:white}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 6%;background:#17102d}
+.logo{font-weight:900;font-size:21px;color:#ff65b4}
+nav a{color:white;text-decoration:none;margin-left:15px;font-size:14px}
+.hero{text-align:center;padding:75px 20px;background:radial-gradient(ellipse at top,#573074,#100b23 72%)}
+.tag{color:#ffa6d2;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(38px,7vw,76px);margin:18px auto;max-width:900px;line-height:1.06}
+h1 span{color:#ff65b4}
+p{color:#cfc7df;line-height:1.6}
+.hero p{max-width:610px;margin:20px auto 32px;font-size:18px}
+.button{display:inline-block;background:#f542a0;color:white;border:0;border-radius:35px;padding:17px 30px;font-weight:bold;text-decoration:none;cursor:pointer}
+.button:hover{background:#ff70b9}
+.secondary{background:#302445;margin-left:10px}
+.visual{margin:45px auto 0;max-width:620px;padding:35px;border:1px solid #6b4a87;border-radius:30px;background:linear-gradient(135deg,#372153,#221433)}
+.characters{display:flex;align-items:center;justify-content:center;gap:20px}
+.character{width:130px;height:150px;border-radius:28px;background:linear-gradient(145deg,#8059b0,#ec73af);display:flex;align-items:center;justify-content:center;font-size:75px;box-shadow:0 14px 35px #0005}
+.heart{font-size:40px;color:#ff66ac}
+section{padding:65px 7%;text-align:center}
+h2{font-size:34px;margin:0 0 12px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:35px auto}
+.card{padding:30px 20px;border-radius:22px;background:#211733;border:1px solid #48355c}
+.card .emoji{font-size:43px}
+.card h3{margin-bottom:8px}
+#demo{background:#19112d}
+.upload{max-width:550px;margin:25px auto;border:2px dashed #80518d;border-radius:22px;padding:35px}
+input[type=file]{width:100%;max-width:300px}
+#preview{display:none;max-width:100%;max-height:230px;border-radius:15px;margin:20px auto}
+.notice{font-size:13px}
+footer{text-align:center;padding:30px;color:#a99ab9;font-size:13px}
+@media(max-width:650px){nav{display:none}.cards{grid-template-columns:1fr}.character{width:95px;height:115px;font-size:55px}.heart{font-size:26px}.secondary{margin:12px 0 0}.hero{padding-top:55px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Give Me Your Genes</div>
+<nav><a href="#how">How It Works</a><a href="#demo">Create</a><a href="#shop">Shop</a></nav>
+</header>
+<div class="hero">
+<div class="tag">Two people. One wild imagination.</div>
+<h1>What would <span>our baby</span> look like?</h1>
+<p>Turn two people into adorable collectible characters and imagine a whole new little personality. Just for fun.</p>
+<a class="button" href="#demo">Create Our Baby</a>
+<a class="button secondary" href="#how">How It Works</a>
+<div class="visual">
+<div class="characters">
+<div class="character">👩</div>
+<div class="heart">♥</div>
+<div class="character">👨</div>
+</div>
+<p>Two characters. Endless possibilities.</p>
+</div>
+</div>
+<section id="how">
+<h2>How the magic works</h2>
+<p>Three simple steps to your imaginary family.</p>
+<div class="cards">
+<div class="card"><div class="emoji">📸</div><h3>1. Add Photos</h3><p>Choose photos of two consenting adults.</p></div>
+<div class="card"><div class="emoji">✨</div><h3>2. Imagine</h3><p>Explore playful fictional baby characters.</p></div>
+<div class="card"><div class="emoji">🎁</div><h3>3. Collect</h3><p>Share the results and explore future custom figurines.</p></div>
+</div>
+</section>
+<section id="demo">
+<h2>Start creating</h2>
+<p>Test the photo selection experience.</p>
+<div class="upload">
+<p>Select a photo to preview it on this device.</p>
+<input type="file" accept="image/*" id="photo">
+<img id="preview" alt="Your selected photo preview">
+<p class="notice">This prototype does not upload, store, or generate images.</p>
+<button class="button" onclick="alert('AI generation is coming next. This is currently a website preview.')">Imagine Our Baby</button>
+</div>
+</section>
+<section id="shop">
+<h2>Bring your creation to life</h2>
+<p>Collectible figurines, magnetic characters, and NFC keepsakes are planned for a future release.</p>
+<div class="cards">
+<div class="card"><div class="emoji">🧸</div><h3>Baby Figurines</h3><p>Custom 3D-printed collectibles.</p></div>
+<div class="card"><div class="emoji">🧲</div><h3>Magnetic Pairing Stand</h3><p>Place two characters together to begin the fun.</p></div>
+<div class="card"><div class="emoji">🔑</div><h3>Smart Keychains</h3><p>Memorable characters with NFC possibilities.</p></div>
+</div>
+</section>
+<footer>© 2026 Give Me Your Genes · Fictional entertainment only · Not a genetic prediction</footer>
+<script>
+document.getElementById('photo').addEventListener('change',function(e){
+const file=e.target.files[0];
+const img=document.getElementById('preview');
+if(file){img.src=URL.createObjectURL(file);img.style.display='block';}
+});
+</script>
+</body>
+</html>
