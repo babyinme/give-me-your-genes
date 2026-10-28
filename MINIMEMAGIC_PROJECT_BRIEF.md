@@ -96,3 +96,12 @@ Design for a **hybrid fulfillment network**: print internally when economical; o
 - AI automation should handle image sizing, safe-area checks, file creation, order dispatch, tracking and routine support; flag failed payments, print-quality issues, low resolution, privacy/consent concerns and chargebacks for human escalation. Never promise zero human involvement.
 - No live payments or supplier integrations have been configured. Before launching, verify checkout, order file delivery, fulfillment samples, shipping/tax/return policies and positive per-order margins.
 - Useful docs: https://printify.com/blog/powerful-custom-solutions-with-printify-api/ ; https://developers.printful.com/docs/v2-preview/ ; https://www.gelato.com/order-flow
+
+## Steps 1–4 implementation checkpoint — 2026-10-28
+- Reworked the live-site source to include a three-product MiniMeMagic gift studio: ceramic mug, framed wall-art portrait and ornament.
+- Added on-device canvas previews using the actual generated baby portrait and editable name; sample placeholders are shown before generation. Preview PNG download is enabled; this is not a printer-ready production file.
+- Added mobile-specific product-card and preview layouts; retained the existing AI generation endpoint and access-code workflow.
+- Supplier comparison based on official API documentation: Printify explicitly supports user-generated image artwork and direct order creation; Printful supports custom print files, order API, and asynchronous official mockup generation; Gelato supports API order integration, templates and sandbox quotes. Printify's built-in personalization may require human review, so prefer supplying final artwork via direct order API after verifying account-specific behavior.
+- Supplier ranking for pilot: Printify (cost comparison + user-generated artwork), Printful (custom API workflow), Gelato (poster and geographic alternative). No supplier account, API key, print variant, quote, checkout, or shipment is yet connected.
+- Official references: https://developers.printify.com/ ; https://developers.printful.com/docs/ ; https://www.gelato.com/integrations ; https://support.gelato.com/en/articles/8996572-getting-started-with-api-integration
+- Verification completed: source committed and inline JavaScript syntax checked. End-to-end live browser/device testing and production deployment verification remain outstanding at this checkpoint. No paid AI generation tests were run.
