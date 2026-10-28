@@ -1,100 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Give Me Your Genes</title>
-<!-- Trigger Vercel deployment -->  
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Give Me Your Genes — turn two photos into an imaginary family story. Explore the future of playful AI character creation and 3D keepsakes.">
+<title>Give Me Your Genes — Real People. Imaginary Babies.</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#100b23;color:white}
-header{display:flex;justify-content:space-between;align-items:center;padding:22px 6%;background:#17102d}
-.logo{font-weight:900;font-size:21px;color:#ff65b4}
-nav a{color:white;text-decoration:none;margin-left:15px;font-size:14px}
-.hero{text-align:center;padding:75px 20px;background:radial-gradient(ellipse at top,#573074,#100b23 72%)}
-.tag{color:#ffa6d2;font-size:14px;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(38px,7vw,76px);margin:18px auto;max-width:900px;line-height:1.06}
-h1 span{color:#ff65b4}
-p{color:#cfc7df;line-height:1.6}
-.hero p{max-width:610px;margin:20px auto 32px;font-size:18px}
-.button{display:inline-block;background:#f542a0;color:white;border:0;border-radius:35px;padding:17px 30px;font-weight:bold;text-decoration:none;cursor:pointer}
-.button:hover{background:#ff70b9}
-.secondary{background:#302445;margin-left:10px}
-.visual{margin:45px auto 0;max-width:620px;padding:35px;border:1px solid #6b4a87;border-radius:30px;background:linear-gradient(135deg,#372153,#221433)}
-.characters{display:flex;align-items:center;justify-content:center;gap:20px}
-.character{width:130px;height:150px;border-radius:28px;background:linear-gradient(145deg,#8059b0,#ec73af);display:flex;align-items:center;justify-content:center;font-size:75px;box-shadow:0 14px 35px #0005}
-.heart{font-size:40px;color:#ff66ac}
-section{padding:65px 7%;text-align:center}
-h2{font-size:34px;margin:0 0 12px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:35px auto}
-.card{padding:30px 20px;border-radius:22px;background:#211733;border:1px solid #48355c}
-.card .emoji{font-size:43px}
-.card h3{margin-bottom:8px}
-#demo{background:#19112d}
-.upload{max-width:550px;margin:25px auto;border:2px dashed #80518d;border-radius:22px;padding:35px}
-input[type=file]{width:100%;max-width:300px}
-#preview{display:none;max-width:100%;max-height:230px;border-radius:15px;margin:20px auto}
-.notice{font-size:13px}
-footer{text-align:center;padding:30px;color:#a99ab9;font-size:13px}
-@media(max-width:650px){nav{display:none}.cards{grid-template-columns:1fr}.character{width:95px;height:115px;font-size:55px}.heart{font-size:26px}.secondary{margin:12px 0 0}.hero{padding-top:55px}}
+:root{color-scheme:dark;--navy:#070f24;--navy2:#101a36;--pink:#ff3799;--pink2:#ff78c2;--line:#ffffff29;--muted:#c9d0e5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070e22;color:white;font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ff9bd1;outline-offset:3px}
+.wrap{max-width:1360px;margin:auto;padding:0 30px}
+header{height:86px;position:relative;z-index:4;background:#070f24e8;border-bottom:1px solid #ffffff25;backdrop-filter:blur(18px)}
+.nav{height:100%;display:flex;align-items:center;gap:28px}.brand{font-weight:1000;font-size:clamp(23px,2.5vw,32px);letter-spacing:-1.8px;line-height:1}.brand em{font-style:normal;color:var(--pink);font-size:1.15em}.brand small{display:block;font-size:9px;letter-spacing:2.1px;font-weight:800;color:#dce1ef;margin-top:8px}.navlinks{display:flex;gap:26px;align-items:center;margin-left:auto}.navlinks a{font-size:13px;font-weight:650;color:#d7dcec}.navlinks a:hover{color:#ff80c5}.pill{border:0;border-radius:999px;background:linear-gradient(135deg,#ff2289,#f65cae);color:white;font-weight:850;box-shadow:0 8px 25px #ff29975e;padding:13px 24px;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s,box-shadow .2s}.pill:hover{transform:translateY(-2px);box-shadow:0 12px 30px #ff299777}.pill.ghost{background:#ffffff19;border:1px solid #ffffff4d;box-shadow:none}.navcta{white-space:nowrap}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 76% 15%,#864b82 0%,#1c2c56 32%,#08132a 72%);min-height:590px}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081026 0%,#081026ee 34%,#08102640 75%),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85') center/cover;opacity:.72;z-index:-2}.hero:after{content:"";position:absolute;inset:auto 0 0;height:190px;background:linear-gradient(transparent,#070e22);z-index:-1}.heroGrid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:25px;padding-top:66px;padding-bottom:80px}.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:850;color:#ffb6d9}.hero h1{font-size:clamp(48px,5.6vw,84px);line-height:1.01;letter-spacing:-4px;margin:15px 0 20px;font-weight:1000}.hero h1 span{color:var(--pink2)}.hero p{font-size:18px;color:#dce3f3;max-width:560px;margin:0 0 27px}.actions{display:flex;gap:12px;flex-wrap:wrap}.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:29px;color:#e0e5f0;font-size:12px}.trust span{display:flex;align-items:center;gap:6px}.trust b{font-size:17px}.photoStack{position:relative;min-height:435px;display:flex;align-items:center;justify-content:center}.photoFrame{width:74%;max-width:460px;aspect-ratio:4/4.3;border-radius:36px;border:6px solid #ffffffc7;box-shadow:0 35px 95px #0009;overflow:hidden;transform:rotate(-3deg);background:#44334c;position:relative}.photoFrame img{width:100%;height:100%;object-fit:cover}.photoFrame:after{content:"Illustrative concept image";position:absolute;bottom:0;left:0;right:0;background:#09112dbb;padding:9px 12px;text-align:center;font-size:11px}.miniFrame{position:absolute;right:0;bottom:5px;width:37%;aspect-ratio:1;border:7px solid #fff;border-bottom-width:27px;transform:rotate(8deg);border-radius:5px;box-shadow:0 20px 45px #0009;overflow:hidden;background:#d5b2aa}.miniFrame img{width:100%;height:100%;object-fit:cover}.heart{position:absolute;right:1%;top:4%;font-size:64px;color:#ff6bb8;transform:rotate(12deg);text-shadow:0 6px 20px #000a}.scribble{position:absolute;left:1%;bottom:12%;font-family:cursive;font-size:23px;line-height:1.25;transform:rotate(-8deg);text-shadow:0 4px 12px #000}
+.section{padding:68px 0}.sectionHead{text-align:center;margin-bottom:34px}.sectionHead h2{font-size:clamp(32px,4vw,48px);letter-spacing:-1.6px;line-height:1.12;margin:8px 0}.sectionHead p{color:var(--muted);margin:0}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.step{background:linear-gradient(150deg,#172343,#0b1531);border:1px solid #455275;border-radius:20px;padding:22px;min-height:177px}.number{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ff2b95,#f86cb6);font-size:21px;font-weight:900;box-shadow:0 4px 15px #ff329877}.stepIcon{font-size:27px;margin:14px 0 4px}.step h3{font-size:17px;margin:5px 0}.step p{color:#c6cfe1;font-size:13px;margin:0}
+.showcase{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.panel{background:linear-gradient(145deg,#1b2244,#0a1430);border:1px solid #48527a;border-radius:22px;overflow:hidden}.panel .panelTop{padding:18px 18px 9px;font-weight:900;font-size:18px}.panelTop strong{color:#ff76bb}.imageBox{height:280px;margin:0 13px;border-radius:15px;overflow:hidden;position:relative;background:#3a3150}.imageBox img{width:100%;height:100%;object-fit:cover}.imageBox .caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#071026dd);padding:30px 12px 11px;font-size:12px}.panelBottom{padding:15px 17px 20px;color:#cfd5e9;font-size:13px}.panelBottom .pill{width:100%;margin-bottom:9px}.textLink{display:block;text-align:center;color:#ffc3e1;text-decoration:underline;text-underline-offset:3px}.styleRow{display:flex;gap:7px;margin:0 13px 12px}.styleRow button{border:1px solid #647098;background:transparent;color:#e4e9f8;border-radius:100px;padding:7px 9px;font-size:11px;flex:1}.styleRow button.active{background:#f52b90;border-color:#ff78bc;color:#fff}.styleNote{margin:0 13px 12px;color:#ccd6e8;font-size:12px}
+.creator{background:linear-gradient(180deg,#0b1530,#12112f);border-top:1px solid #ffffff1a;border-bottom:1px solid #ffffff1a}.uploadGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:850px;margin:30px auto 18px}.drop{border:2px dashed #896aab;border-radius:20px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;background:#ffffff09;overflow:hidden;position:relative}.drop:hover{border-color:#ff8cc7;background:#ffffff12}.drop b{font-size:35px}.drop strong{font-size:17px}.drop span{color:#cbd0e4;font-size:12px}.drop input{position:absolute;width:1px;height:1px;opacity:0}.drop img{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.drop.hasImage img{display:block}.drop.hasImage .overlay{position:absolute;bottom:0;left:0;right:0;background:#091025bd;padding:7px;font-size:12px}.consent{display:flex;justify-content:center;align-items:flex-start;gap:9px;max-width:730px;margin:15px auto;color:#d6dced;font-size:13px}.consent input{accent-color:#f52b90;margin-top:4px}.center{text-align:center}.fine{font-size:12px;color:#aeb8d2;max-width:650px;margin:15px auto}.feedback{min-height:24px;color:#ffb9d8;font-weight:700}
+.nfc{background:radial-gradient(ellipse at 70% 35%,#4a2858,#111b38 60%,#0a1127);border:1px solid #4a4d78;border-radius:25px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.nfc h2{font-size:clamp(30px,3.7vw,46px);line-height:1.1;letter-spacing:-1.5px;margin:8px 0}.nfc p{color:#d0d7e7}.stand{height:255px;display:grid;place-items:center;position:relative}.stand:before{content:"";position:absolute;bottom:24px;width:70%;height:45px;background:linear-gradient(180deg,#1c2b60,#080d20);border-radius:50%;border:3px solid #4eafff;box-shadow:0 0 27px #168cff88}.figures{font-size:110px;position:relative;z-index:1;filter:drop-shadow(0 12px 12px #0008)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.product{background:#141c37;border:1px solid #3f496b;border-radius:18px;overflow:hidden;text-align:center}.productVisual{height:170px;background:radial-gradient(circle,#765080,#1a2144 70%);display:grid;place-items:center;font-size:75px}.product h3{margin:13px 8px 2px}.product p{margin:0 10px 16px;color:#c4cce1;font-size:12px}
+.faq{max-width:820px;margin:auto}.faq details{border-bottom:1px solid #ffffff33;padding:15px 0}.faq summary{font-weight:750;cursor:pointer}.faq p{color:#cbd4e7}
+footer{border-top:1px solid #ffffff24;padding:35px 0;color:#aeb8d2;font-size:12px}.footerInner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footerInner a{text-decoration:underline}
+@media(max-width:950px){.navlinks{gap:12px}.heroGrid{grid-template-columns:1.1fr .9fr}.hero h1{font-size:58px}.photoStack{min-height:350px}.steps{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){header{height:auto}.nav{padding-top:16px;padding-bottom:15px;flex-wrap:wrap;gap:14px}.navlinks{order:3;width:100%;overflow:auto;justify-content:space-between;gap:12px}.navlinks a{white-space:nowrap;font-size:12px}.navcta{margin-left:auto;padding:10px 14px}.brand{font-size:24px}.wrap{padding:0 18px}.heroGrid{grid-template-columns:1fr;padding-top:46px;padding-bottom:35px}.hero h1{font-size:clamp(48px,11vw,66px);letter-spacing:-2.5px}.hero p{font-size:16px}.photoStack{min-height:360px}.photoFrame{width:65%;max-width:330px}.miniFrame{right:4%;width:32%}.scribble{font-size:18px}.section{padding:46px 0}.showcase{grid-template-columns:1fr}.imageBox{height:330px}.uploadGrid{grid-template-columns:1fr}.nfc{grid-template-columns:1fr;padding:24px}.steps{gap:10px}.step{padding:15px}.products{gap:10px}.productVisual{height:130px;font-size:55px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
-<header>
-<div class="logo">Give Me Your Genes</div>
-<nav><a href="#how">How It Works</a><a href="#demo">Create</a><a href="#shop">Shop</a></nav>
-</header>
-<div class="hero">
-<div class="tag">Two people. One wild imagination.</div>
-<h1>What would <span>our baby</span> look like?</h1>
-<p>Turn two people into adorable collectible characters and imagine a whole new little personality. Just for fun.</p>
-<a class="button" href="#demo">Create Our Baby</a>
-<a class="button secondary" href="#how">How It Works</a>
-<div class="visual">
-<div class="characters">
-<div class="character">👩</div>
-<div class="heart">♥</div>
-<div class="character">👨</div>
-</div>
-<p>Two characters. Endless possibilities.</p>
-</div>
-</div>
-<section id="how">
-<h2>How the magic works</h2>
-<p>Three simple steps to your imaginary family.</p>
-<div class="cards">
-<div class="card"><div class="emoji">📸</div><h3>1. Add Photos</h3><p>Choose photos of two consenting adults.</p></div>
-<div class="card"><div class="emoji">✨</div><h3>2. Imagine</h3><p>Explore playful fictional baby characters.</p></div>
-<div class="card"><div class="emoji">🎁</div><h3>3. Collect</h3><p>Share the results and explore future custom figurines.</p></div>
-</div>
-</section>
-<section id="demo">
-<h2>Start creating</h2>
-<p>Test the photo selection experience.</p>
-<div class="upload">
-<p>Select a photo to preview it on this device.</p>
-<input type="file" accept="image/*" id="photo">
-<img id="preview" alt="Your selected photo preview">
-<p class="notice">This prototype does not upload, store, or generate images.</p>
-<button class="button" onclick="alert('AI generation is coming next. This is currently a website preview.')">Imagine Our Baby</button>
-</div>
-</section>
-<section id="shop">
-<h2>Bring your creation to life</h2>
-<p>Collectible figurines, magnetic characters, and NFC keepsakes are planned for a future release.</p>
-<div class="cards">
-<div class="card"><div class="emoji">🧸</div><h3>Baby Figurines</h3><p>Custom 3D-printed collectibles.</p></div>
-<div class="card"><div class="emoji">🧲</div><h3>Magnetic Pairing Stand</h3><p>Place two characters together to begin the fun.</p></div>
-<div class="card"><div class="emoji">🔑</div><h3>Smart Keychains</h3><p>Memorable characters with NFC possibilities.</p></div>
-</div>
-</section>
-<footer>© 2026 Give Me Your Genes · Fictional entertainment only · Not a genetic prediction</footer>
+<header><div class="wrap nav"><a class="brand" href="#home" aria-label="Give Me Your Genes home">Give Me Your <em>Genes♡</em><small>REAL PEOPLE. IMAGINARY BABIES.</small></a><nav class="navlinks" aria-label="Main navigation"><a href="#home">Home</a><a href="#how">How It Works</a><a href="#create">Create Your Baby</a><a href="#shop">Shop</a><a href="#nfc">Explore Donors</a></nav><a class="pill navcta" href="#create">Get Started →</a></div></header>
+<main>
+<section class="hero" id="home"><div class="wrap heroGrid"><div><div class="eyebrow">Two people. One wild imagination.</div><h1>One Photo.<br><span>Big Possibilities.</span></h1><p>Ever wondered what your imaginary baby could look like? Discover a playful, realistic-inspired baby preview experience, then explore custom characters, 3D collectibles, and keepsakes.</p><div class="actions"><a class="pill" href="#create">📸 Create Your Baby →</a><a class="pill ghost" href="#how">See How It Works</a></div><div class="trust"><span><b>♡</b> Just for fun</span><span><b>🔒</b> Photo preview stays on your device</span><span><b>✦</b> No sign-up for demo</span></div></div><div class="photoStack"><div class="photoFrame"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=85" alt="Illustrative family portrait" loading="eager"></div><div class="miniFrame"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=480&q=85" alt="Illustrative child portrait"></div><div class="heart">♡</div><div class="scribble">What would<br>our baby<br>look like? ↗</div></div></div></section>
+<section class="section" id="how"><div class="wrap"><div class="sectionHead"><div class="eyebrow">The fun starts here</div><h2>How It Works</h2><p>From your favorite photos to a whole new imaginary family.</p></div><div class="steps"><article class="step"><div class="number">1</div><div class="stepIcon">📸</div><h3>Upload Your Photos</h3><p>Choose a clear photo of each consenting adult.</p></article><article class="step"><div class="number">2</div><div class="stepIcon">✨</div><h3>Create Characters</h3><p>Our planned AI experience turns portraits into polished collectible characters.</p></article><article class="step"><div class="number">3</div><div class="stepIcon">♡</div><h3>Imagine a Baby</h3><p>Explore fictional baby looks in different playful styles.</p></article><article class="step"><div class="number">4</div><div class="stepIcon">🛍</div><h3>Explore & Collect</h3><p>Discover future figurines, keychains, and magnetic keepsakes.</p></article></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="showcase"><article class="panel"><div class="panelTop"><strong>1.</strong> YOUR PHOTO</div><div class="imageBox"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=85" alt="Example couple portrait" loading="lazy"><div class="caption">Sample image • your own photos stay on your device in this demo</div></div><div class="panelBottom"><a href="#create" class="pill">📸 Use Your Own Photos →</a><a href="#create" class="textLink">Upload two photos</a></div></article><article class="panel"><div class="panelTop"><strong>2.</strong> YOUR 3D CHARACTERS</div><div class="imageBox" style="display:grid;place-items:center;background:radial-gradient(circle at 50% 30%,#c2749e,#3a2859 65%,#171b3b)"><span style="font-size:110px;filter:drop-shadow(0 15px 18px #0008)" role="img" aria-label="Concept characters">🧑🏻‍🦱 ♡ 👩🏼</span><div class="caption">Concept preview • realistic 3D character generation coming next</div></div><div class="panelBottom">From your favorite picture to a custom character collection.</div></article><article class="panel"><div class="panelTop"><strong>3.</strong> YOUR IMAGINARY BABY</div><div class="styleRow" role="group" aria-label="Baby style options"><button class="active" type="button" data-style="Realistic">Realistic</button><button type="button" data-style="Cute Cartoon">Cute Cartoon</button><button type="button" data-style="Funny">Funny</button><button type="button" data-style="Wild Card">Wild Card</button></div><div class="imageBox"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=700&q=85" alt="Illustrative baby photo, not an AI-generated prediction" loading="lazy"><div class="caption">Illustrative example • fictional entertainment only</div></div><div class="styleNote" id="styleNote">Selected look: Realistic (AI generation coming soon)</div></article></div></div></section>
+<section class="section creator" id="create"><div class="wrap"><div class="sectionHead"><div class="eyebrow">Your story starts here</div><h2>Let's Imagine Your Baby ♡</h2><p>Try our private, browser-only photo preview while the AI experience is being built.</p></div><div class="uploadGrid"><label class="drop" id="drop1"><input type="file" id="photo1" accept="image/png,image/jpeg,image/webp" aria-label="Choose first adult photo"><img id="preview1" alt="First selected adult photo"><b>📷</b><strong>Photo One</strong><span>Tap to choose JPG, PNG, or WebP</span><span class="overlay" hidden>Change photo</span></label><label class="drop" id="drop2"><input type="file" id="photo2" accept="image/png,image/jpeg,image/webp" aria-label="Choose second adult photo"><img id="preview2" alt="Second selected adult photo"><b>📷</b><strong>Photo Two</strong><span>Tap to choose JPG, PNG, or WebP</span><span class="overlay" hidden>Change photo</span></label></div><label class="consent"><input id="consent" type="checkbox"><span>I confirm both people are adults and have agreed to the use of their photographs for this entertainment experience.</span></label><div class="center"><button class="pill" id="imagine" type="button">✨ Imagine Our Baby →</button><p id="feedback" class="feedback" role="status" aria-live="polite"></p><p class="fine">Prototype only: photos are previewed in this browser and are not uploaded, stored, or sent to AI. No real genetic prediction is made.</p></div></div></section>
+<section class="section" id="nfc"><div class="wrap"><div class="nfc"><div><div class="eyebrow">Coming later • the physical experience</div><h2>NFC + Magnetic Stand</h2><p>Imagine placing two collectible characters together on a glowing stand and seeing your imaginary baby appear on your phone. We're exploring NFC-enabled keepsakes for a future release.</p><a class="pill ghost" href="#shop">Explore Collectibles →</a></div><div class="stand"><div class="figures" aria-label="Illustration of two characters on a stand">🧑🏻‍🦱👩🏼</div></div></div></div></section>
+<section class="section" id="shop"><div class="wrap"><div class="sectionHead"><div class="eyebrow">Made to remember</div><h2>Collect Them All</h2><p>Future products inspired by your imaginary family. Not yet available to purchase.</p></div><div class="products"><article class="product"><div class="productVisual">🔑</div><h3>Character Keychains</h3><p>Little versions of your favorite people.</p></article><article class="product"><div class="productVisual">🧸</div><h3>Baby Figurines</h3><p>Collectible 3D character keepsakes.</p></article><article class="product"><div class="productVisual">👨‍👩‍👧</div><h3>Family Sets</h3><p>One imaginary family, endless stories.</p></article><article class="product"><div class="productVisual">🧲</div><h3>Magnetic NFC Stand</h3><p>Tap. Match. Reveal. A future concept.</p></article></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap faq"><div class="sectionHead"><h2>Good to Know</h2></div><details><summary>Does this predict what our real baby would look like?</summary><p>No. Results will be fictional creative images, not genetic, medical, or scientific predictions.</p></details><details><summary>Are my photos uploaded when I try the demo?</summary><p>No. The current demo previews images locally in your browser. It does not transmit or store them.</p></details><details><summary>Can I order a 3D printed character today?</summary><p>Not yet. We're developing the product and ordering experience.</p></details></div></section>
+</main>
+<footer><div class="wrap footerInner"><span>© 2026 Give Me Your Genes. Real people. Imaginary babies. Made for fun.</span><span>Fictional entertainment only · Not a genetic prediction · Prototype</span></div></footer>
 <script>
-document.getElementById('photo').addEventListener('change',function(e){
-const file=e.target.files[0];
-const img=document.getElementById('preview');
-if(file){img.src=URL.createObjectURL(file);img.style.display='block';}
+(function(){
+const maxBytes=10*1024*1024;const urls={};
+for(let n=1;n<=2;n++){
+const input=document.getElementById('photo'+n),img=document.getElementById('preview'+n),box=document.getElementById('drop'+n);
+input.addEventListener('change',function(){
+const f=input.files&&input.files[0];if(!f)return;
+if(!['image/jpeg','image/png','image/webp'].includes(f.type)||f.size>maxBytes){document.getElementById('feedback').textContent='Please select a JPG, PNG, or WebP image under 10 MB.';input.value='';return}
+if(urls[n])URL.revokeObjectURL(urls[n]);urls[n]=URL.createObjectURL(f);img.src=urls[n];box.classList.add('hasImage');box.querySelector('.overlay').hidden=false;document.getElementById('feedback').textContent='';
 });
+}
+document.querySelectorAll('[data-style]').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('[data-style]').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.getElementById('styleNote').textContent='Selected look: '+btn.dataset.style+' (AI generation coming soon)';})});
+document.getElementById('imagine').addEventListener('click',function(){const msg=document.getElementById('feedback');if(!document.getElementById('photo1').files.length||!document.getElementById('photo2').files.length){msg.textContent='Choose both photos to continue.';return}if(!document.getElementById('consent').checked){msg.textContent='Please confirm both adults have consented.';return}msg.textContent='Photos selected! Your preview is ready. AI baby generation is coming soon — no photos were uploaded.'});
+window.addEventListener('pagehide',function(){Object.keys(urls).forEach(function(k){URL.revokeObjectURL(urls[k])})});
+})();
 </script>
-</body>
-</html>
+</body></html>
