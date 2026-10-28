@@ -76,3 +76,13 @@ Design for a **hybrid fulfillment network**: print internally when economical; o
 - Be explicit about what is live versus concept.
 - Make outsourcing profitable by design.
 - Keep future project discussions focused on this brief and verified implementation details.
+
+## Proven website and app design reference policy (2026-10-28)
+- Default to established, demonstrated consumer experiences rather than inventing new UI patterns. Borrow workflows, not logos, proprietary artwork or distinctive protected designs.
+- **Funko Pop! Yourself:** guided customization, obvious preview, personalization options, gift bundles, named packaging and collecting (https://funko.com/pop-yourself.html).
+- **Mixbook mobile:** easy camera-roll photo intake, simple guided creation, cross-device continuity, project review and order tracking (https://www.mixbook.com/mobile).
+- **Shopify / Shop Pay:** familiar, low-friction checkout and order tracking when physical sales launch; verify platform fit, fees and eligibility before implementing (https://www.shopify.com/shop-pay).
+- **Wonderbly:** emotionally engaging gift presentation and personalization; **Shutterfly:** product collections, occasion-based gifting and repeat sales.
+- Design requirements: mobile-first, fast-loading, polished original product photography or high-quality 3D renders, one clear primary CTA, short upload-to-reveal flow, transparent pricing, trust/privacy disclosures, strong accessibility, no misleading placeholder products.
+- Research and document the specific reference pattern before each major design feature; prototype, test with users, and measure completion, sharing and conversion instead of assuming competitor success guarantees ours.
+- Future partner-printing flow must fit the storefront: preview/proof approval, transparent delivery estimate, payment, routing to vetted manufacturer, quality control and shipment tracking. Maintain contribution margin after partner costs.
