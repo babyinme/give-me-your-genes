@@ -2,10 +2,11 @@
 The current website is a static single-page site with a Vercel Node serverless function at `api/generate.js`. Do not rebuild it.
 
 ## Configuration
-1. Add `OPENAI_API_KEY` as an **encrypted/sensitive** Vercel environment variable for the intended environment(s). Never put the key in HTML, JavaScript served to browsers, commits, or chat messages.
+1. Add `OPENAI_API_KEY` and `DEMO_ACCESS_CODE` as **encrypted/sensitive** Vercel environment variables for the intended environment(s). Set the demo code to a long, random value. Never put either secret in HTML, browser JavaScript, commits, or chat messages.
 2. Redeploy after adding the variable.
 3. Run an authorized test with photos of two consenting adults. Confirm image generation, download, errors, mobile behavior and billing before inviting the public.
-4. Verify the image API's current model/tool support, commercial terms, image consent requirements and costs against official documentation. This endpoint uses the Responses API image_generation tool; it has not yet been tested with a configured API key.
+4. Use the private demo access code in the website form. Images are resized in-browser to at most 1024 pixels per side before submission. The code is a lightweight demo gate, **not** a substitute for durable rate limiting or account authentication. Do not enable public access with only this protection.
+5. Verify the image API's current model/tool support, commercial terms, image consent requirements and costs against official documentation. This endpoint uses the Responses API image_generation tool; it has not yet been tested with a configured API key.
 
 ## Security work required BEFORE public launch
 - Rate limiting, abuse prevention, quotas and spending limits. Do not expose unlimited paid generation to the public.
