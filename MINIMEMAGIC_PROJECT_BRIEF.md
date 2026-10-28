@@ -105,3 +105,13 @@ Design for a **hybrid fulfillment network**: print internally when economical; o
 - Supplier ranking for pilot: Printify (cost comparison + user-generated artwork), Printful (custom API workflow), Gelato (poster and geographic alternative). No supplier account, API key, print variant, quote, checkout, or shipment is yet connected.
 - Official references: https://developers.printify.com/ ; https://developers.printful.com/docs/ ; https://www.gelato.com/integrations ; https://support.gelato.com/en/articles/8996572-getting-started-with-api-integration
 - Verification completed: source committed and inline JavaScript syntax checked. End-to-end live browser/device testing and production deployment verification remain outstanding at this checkpoint. No paid AI generation tests were run.
+
+## Future concept: Nine Months of Mini Magic — pregnancy dollhouse subscription (2026-10-28)
+- Personalized miniature dollhouse / nursery collection, delivered in nine monthly installments during pregnancy.
+- A universal modular house system, customized with a family's chosen home style, color palette, names, nursery theme, and imagined child.
+- Customers may purchase the full nine-month package upfront or subscribe monthly. Each shipment adds a compatible miniature furniture piece, room, accessory, or collectible; the final installment completes the set.
+- Production and fulfillment should be outsourced to specialized 3D-print partners, independent of the initial Printify flat-gift integration. The owner should not need to manufacture, pack, or ship orders.
+- Potential personalization: optional miniature baby figurine based on the customer's generated portrait, customized nursery sign, furniture and decor. Clearly distinguish imaginative designs from real genetic predictions.
+- Design considerations: common modular scale and connectors; consistent part fit across vendors; assembly instructions; replacement parts; breakage and shipping tests; secure recurring billing; subscription changes, skipped months and delivery tracking.
+- Safety: decide whether these are adult decorative collectibles or children's toys before development. If intended for children, assess applicable toy safety, small-parts/choking warnings, materials and testing. Avoid marketing small 3D printed accessories as baby-safe products without compliance review.
+- Stage: **concept only**, not yet modeled, priced, manufactured, subscribed, or for sale. Preserve as a future product opportunity; do not delay current three-product Printify launch.
